@@ -1,7 +1,7 @@
-var minAge = "Thu, 01 Jan 1970 00:00:00 UTC", maxAge = "Fri, 31 Dec 9999 23:59:59 UTC";
+var maxAge = "Fri, 31 Dec 9999 23:59:59 UTC";
 
 var setCookie = function (name, value) {
-    document.cookie = name + "=" + JSON.stringify(value) + ";expires=" + maxAge + ";path=/;";
+    document.cookie = name + "=" + JSON.stringify(value) + ";expires=" + maxAge;
 };
 
 var getCookie = function (name) {
@@ -26,10 +26,6 @@ var getCookie = function (name) {
     return "";
 };
 
-var deleteCookie = function (name) {
-    document.cookie = name + "=;expires=" + minAge + ";path=/;";
-};
-
 var numericSort = function (a, b) {
     return b - a;
 };
@@ -47,18 +43,6 @@ var sep = function (number) {
 
 String.prototype.contains = function (string) {
     return this.indexOf(string) > -1;
-};
-
-String.prototype.cap = function () {
-    return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
-};
-
-String.prototype.removeSpaces = function () {
-    return this.replace(/ /g, "");
-};
-
-String.prototype.strip = function () {
-    return this.replace(/<\/?[^>]*>/g, "");
 };
 
 Object.defineProperty(Array.prototype, "contains", {
