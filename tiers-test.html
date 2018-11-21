@@ -13,7 +13,7 @@
 		<script src='tiers/tiers.js'></script>
     </head>
     
-    <body onMouseMove='updateMouseLoc(event)' onClick='closeModal(event)'>
+    <body onMouseMove='updateMouseLoc(event)'>
         <div id='wrap'>
             <div id='init'>
                 <h1>Touhou Tier List Creator</h1>
@@ -42,15 +42,10 @@
                     <tfoot><tr><td><input id='tier_name' type='text' value='' onKeyUp='detectAddTierEnter(event)'><input type='button' value='Add Tier' onClick='addTier($("#tier_name").val())'></td></tr></tfoot>
                 </table>
             </div>
-            <div id='button_container'>
+            <div id='cookie_container'>
                 <input type='button' value='Save Cookie' onClick='save()'>
-                <input type='button' value='Convert to Text' onClick='toText()'>
-                <input type='button' value='Customise' onClick='customise()'>
             </div>
             <div id='msg_container'></div>
-            <div id='modal'>
-                <div id='customisation'></div>
-            </div>
         </div>
     </body>
 
