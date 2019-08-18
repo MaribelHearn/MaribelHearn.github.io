@@ -18,7 +18,10 @@
 		<script defer>document.documentElement.classList.remove("no-js");</script>
 	</head>
 
-	<body>
+	<body onClick='closeModal(event)' onKeyPress='closeModal(event)'>
+        <div id='modal'>
+            <div id='mobile_modal'></div>
+        </div>
 		<div id='nav' class='wrap'>
 			<nav>
 				<a href='/'><img src='favicon.ico' class='ico-32' alt='Index icon'> Index</a>
