@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang='en' class='no-js'>
+<html lang='en'>
 
     <head>
 		<title>Touhou Tier List Creator</title>
@@ -7,113 +7,24 @@
 		<meta name='viewport' content='width=device-width'>
         <meta name='description' content='Moved to https://maribelhearn.com/tiers'>
         <meta name='keywords' content='touhou, touhou project, 東方, 东方, tier list, tiers, sorter, sort, sorting, creator'>
-		<link rel='stylesheet' type='text/css' href='assets/tiers/tiers.css'>
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa'>
-		<link rel='icon' type='image/x-icon' href='assets/tiers/castle.png'>
-		<script src='utils.js' defer></script>
-		<script src='jquery.js' defer></script>
-		<script src='assets/tiers/tiers.js' defer></script>
-        <script src='assets/tiers/rgbcolor.js' defer></script>
-        <script src='modernizr-custom.js' defer></script>
-        <script defer>document.documentElement.classList.remove("no-js");</script>
+		<meta http-equiv='Refresh' content='3; url=https://maribelhearn.com/tiers'>
     </head>
 
-    <body onClick='closeModal(event)' onKeyPress='closeModal(event)' onResize='checkHeight()' onOrientationChange='updateOrientation()'>
-        <div id='wrap'>
-            <div id='init'>
-    			<nav id='nav'>
-    				<a href='/'><img src='favicon.ico' class='ico-32' alt='Index icon'> Index</a>
-    				<a href='scoring'><img src='assets/scoring/spell.ico' class='ico-32' alt='Spell Card icon'> Scoring</a>
-    				<a href='survival'><img src='assets/survival/survival.ico' class='ico-32' alt='1up Item icon'> Survival</a>
-    				<a href='drc'><img src='assets/drc/power.ico' alt='Power icon'> DRC</a>
-    				<a href='tools'><img src='assets/tools/ufo.ico' class='ico-32' alt='UFO icon'> Tools</a>
-    				<a href='wr'><img src='assets/wr/point.ico' alt='Point Item icon'> WR</a>
-    				<a href='lnn'><img src='assets/lnn/full.ico' class='ico-32' alt='Full Power icon'> LNN</a>
-    				<a href='thvote'><img src='assets/thvote/tou-32.ico' class='ico-32' alt='Tou kanji icon'> Poll</a>
-    				<a href='jargon'><img src='assets/jargon/bomb.ico' alt='Bomb icon'> Jargon</a>
-    				<a href='trs'><img src='assets/trs/shinto.png' alt='Shinto shrine icon'> TRS</a>
-    				<strong><img src='assets/tiers/castle.png' alt='Japanese castle icon'> Tiers</a></strong>
-    			</nav>
-                <h1 id='title'>Touhou Tier List Creator</h1>
-                <div id='sort_selection'>Currently tiering: <select id='sort' onChange='switchSort()'>
-                    <option value='characters'>Characters</option>
-                    <option value='works'>Works</option>
-                </select></div>
-                <div id='instructions'>
-                    <p class='instructions'>This page allows you to create your own Touhou character tier list. Usage instructions are listed below.</p>
-                    <ul id='instructions_list' class='instructions'>
-                        <li>Drag a character onto a tier box to add that character to it.</li>
-                        <li>Drag a character from the picker onto a tiered character to insert them to the right of them.</li>
-                        <li>Drag a tiered character onto another tiered character to swap their positions.</li>
-                        <li>Double click a character to add them to the most recently added tier (not remembered after closure).</li>
-                        <li>Right click a character in a tier, or drag them onto the picker, to remove them from that tier.</li>
-                        <li>Click a tier and then another tier to swap their positions.</li>
-                        <li>Ctrl+Click a tier to automatically add all remaining characters to it, and Ctrl+Right Click a tier to empty it.</li>
-                        <li>Right click a tier to remove that tier and all of its contents.</li>
-                        <li>Hover your cursor above a character to see their name.</li>
-                    </ul>
-                </div>
-                <p id='toggle'><a href='javascript:toggleInstructions()'>Click here to show the instructions.</a></p>
-            </div>
-            <div id='tier_list_container'>
-                <table id='tier_list_table'>
-                    <thead id='tier_list_thead'></thead>
-                    <tbody id='tier_list_tbody'></tbody>
-                    <tfoot id='tier_list_tfoot'>
-                        <tr>
-                            <td id='add_tier_box'>
-                                <input id='tier_name' type='text' value='' onKeyUp='detectAddTierEnter(event)'>
-                                <input id='add_tier' type='button' value='Add Tier' onClick='addTier($("#tier_name").val())'>
-                            </td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
+    <body>
+        <div style='text-align:center;margin-top:7%'>
+			<h1>Touhou Tier List Creator</h1>
+            <p>This page has moved to <a href='https://maribelhearn.com/tiers'>https://maribelhearn.com/tiers</a>.
+			You will be automatically redirected in 3 seconds.</p>
         </div>
-        <div id='buttons'>
-            <div id='credits'>
-                <p>The artworks used for this page are drawn by <a href="https://www.pixiv.net/member.php?id=4920496" target="_blank">Dairi</a> and
-                <a href="https://www.pixiv.net/member.php?id=10349996" target="_blank">るう</a>.
-                Special thanks go to <a href="https://twitter.com/Plus5298" target="_blank">Plus</a> for the original idea as well as testing,
-                <a href="https://twitter.com/pienyan_" target="_blank">pienyan</a> for testing,
-                <a href="https://twitter.com/Doroshii_Sweet" target="_blank">Dorothy Sweet</a> for design improvements and
-                <a href="https://twitter.com/TheDukeofBooms" target="_blank">ZXNova</a> for the Dairi face crops.</p>
-            </div>
-            <div id='menu'>
-                <input type='button' value='Save Tiers' onClick='saveTiers()'>
-                <input type='button' value='Import' onClick='importText()'>
-                <input type='button' value='Export' onClick='exportText()'>
-                <br id='button_split'>
-                <input type='button' value='Customise Tiers' onClick='customiseMenu()'>
-                <input id='hide' type='button' value='Tier List View' onClick='toggleTierView()'>
-                <input type='button' value='Settings' onClick='settingsMenu()'>
-                <input type='button' value='Reset' onClick='eraseAll()'>
-            </div>
-            <span id='information_button'></span>
-            <span id='view_button'></span>
-            <span id='mobile_button_split'></span>
-            <span id='menu_button'></span>
-            <span id='switch_button'></span>
-            <p id='msg_container'></p>
-        </div>
-        <div id='show'><input type='button' value='Normal View' onClick='toggleTierView()'></div>
-        <div id='modal'>
-            <div id='mobile_modal'></div>
-            <div id='notice_modal'></div>
-            <div id='text_conversion'></div>
-            <div id='customisation'></div>
-            <div id='settings'></div>
-        </div>
-        <div id='characters' onDragOver='allowDrop(event)' onDrop='drop(event)'></div>
         <!-- Default Statcounter code for Maribel Hearn's GitHub Pages
         https://maribelhearn.github.io -->
-        <script type="text/javascript">
+        <script>
         var sc_project=11928143;
         var sc_invisible=1;
         var sc_security="24bdfd75";
         var sc_https=1;
         </script>
-        <script type="text/javascript"
+        <script
         src="https://www.statcounter.com/counter/counter.js" async></script>
         <noscript><div class="statcounter"><a title="Web Analytics Made Easy -
         StatCounter" href="http://statcounter.com/" target="_blank"><img
